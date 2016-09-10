@@ -1,0 +1,33 @@
+{
+    "name": "ajaxtamper",
+    "version": "0.0.1",
+    "description": "ajax tamper module for freekite",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/LoveKino/ajaxtamper.git"
+    },
+    "keywords": [
+        "ajax",
+        "tamper",
+        "freekite"
+    ],
+    "author": "ddchen",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/LoveKino/ajaxtamper/issues"
+    },
+    "homepage": "https://github.com/LoveKino/ajaxtamper#readme",
+    "dependencies": {
+        "json-transfer": "0.0.6"
+    },
+    "link_dependencies": {
+        "jsenhance": "~0.0.1",
+        "ajaxproxy": "~0.0.1",
+        "consume-queue": "~0.0.1",
+        "bolzano": "~0.0.1"
+    }
+}
