@@ -96,7 +96,8 @@ module.exports = (opts, {
         afterPlay: () => {
             stopFlag = true;
         },
-        beforeWaitNextMoment: (action) => {
+
+        beforeRunAction: (action) => {
             state = action.afterState;
         }
     };
