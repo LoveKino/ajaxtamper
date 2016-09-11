@@ -61,8 +61,13 @@ module.exports = (opts, {
                     let body = rule.mock;
                     log(`[ajx mock] response body is ${body}`);
                     return {
+                        status: 200,
+                        statusText: 'OK',
+                        bodyType: '',
                         body,
-                        status: 200
+                        headers: {
+                            'Content-Type': 'application/json;charset=UTF-8'
+                        }
                     };
                 }
             },
