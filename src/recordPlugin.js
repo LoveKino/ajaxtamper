@@ -4,8 +4,6 @@ let ajaxproxy = require('ajaxproxy');
 
 let messageQueue = require('consume-queue');
 
-let addAjaxInfo = require('./addAjaxInfo');
-
 let {
     forEach
 } = require('bolzano');
@@ -59,13 +57,11 @@ module.exports = () => {
 
     return {
         startRecording: (options, {
-            updateRecordInfo
+            receiveAjax
         }) => {
             captureCallback = (result) => {
                 // updateAjax
-                return result.then((info) => {
-                    return updateRecordInfo(addAjaxInfo(info));
-                });
+                return result.then(receiveAjax);
             };
             forEach(rootCache, (result) => {
                 captureCallback(result);

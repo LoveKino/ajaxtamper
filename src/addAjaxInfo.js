@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = (info) => (recordInfo) => {
+module.exports = (recordInfo, info) => {
     let last = recordInfo.nodes[recordInfo.nodes.length - 1];
 
     let ajaxs = [];
