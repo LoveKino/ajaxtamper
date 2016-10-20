@@ -58,10 +58,14 @@ module.exports = () => {
     });
 
     return {
-        startRecording: (recordInfo, recordState) => {
+        startRecording: (options, {
+            updateRecordInfo
+        }) => {
             captureCallback = (result) => {
                 // updateAjax
-                return addAjaxInfo(result, recordInfo).then(recordState);
+                return result.then((info) => {
+                    return updateRecordInfo(addAjaxInfo(info));
+                });
             };
             forEach(rootCache, (result) => {
                 captureCallback(result);

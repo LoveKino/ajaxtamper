@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = (ajaxInfoP, recordInfo) => {
+module.exports = (info) => (recordInfo) => {
     let last = recordInfo.nodes[recordInfo.nodes.length - 1];
 
     let ajaxs = [];
@@ -21,7 +21,7 @@ module.exports = (ajaxInfoP, recordInfo) => {
         ajaxs = last.externals.ajax;
     }
 
-    return Promise.resolve(ajaxInfoP).then((info) => {
-        ajaxs.push(info);
-    });
+    ajaxs.push(info);
+
+    return recordInfo;
 };
